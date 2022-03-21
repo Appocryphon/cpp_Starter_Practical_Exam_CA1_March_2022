@@ -3,7 +3,7 @@
 #include <ctime>
 #include<sstream>
 using namespace std;
-
+// Kudzai Marumba
 // student struct definition - given
 struct student {
     string name;
@@ -22,23 +22,31 @@ void question1() {  // Topic: Accessing array using Pointer Notation
 
     double array[] = {1.1, 2.2, 3.3, 4.4, 5.5};
 
+
     //TODO  1a. Declare a pointer named 'ptr' and assign it
     //      to point at the array 'array'
+double* ptr;
 
+ptr = array;
 
     //TODO  1b. Write a for(){} loop that will output all elements in
     //      the array using POINTER NOTATION (NOT Array notation)
     //      by de-referencing the pointer.
 
+   for(*ptr =0; ptr < array; ptr++)
+   {
+       cout<< *ptr << ", " ;
+   }
 
     //TODO  1c. Output the size in bytes of the pointer 'ptr'
-
+    double size = sizeof(array)/sizeof(double);
+    cout << "Elements in Array are: "<<  sizeof(ptr) << endl;
 
     //TODO 1d. Write code to calculate and output the number of elements in the
     //         array 'array' (i.e. Output the number of elements
     //         in the array 'array' without hard-coding the size)
 
-
+//
     //TODO 1e. Set the pointer 'ptr' to point at the LAST array element
     //     and output the last element using the pointer.
 
@@ -46,6 +54,10 @@ void question1() {  // Topic: Accessing array using Pointer Notation
     //TODO 1f. Using a for(){} loop, iterate in reverse (right-to-left)
     //         through the elements, outputting each element using
     //         the pointer 'ptr' and pointer notation. (NOT array notation)
+    for(ptr =0; ptr > array; ptr--)
+    {
+        cout<< ptr << ", " ;
+    }
 
 
     //TODO g. Given a C-style string (i.e. array of char) that stores one word,
@@ -57,8 +69,29 @@ void question1() {  // Topic: Accessing array using Pointer Notation
     //    Output the count of the characters.
 
     char word[] = "Mississippi";        // given
+char* pChar;
 
+pChar = word;
+int sCount = 0;
+while(*pChar != '\0')
+{
+    cout<< *pChar;
+    pChar++;
 
+    if (*pChar == )
+    {
+        sCount++;
+    }
+
+}
+}
+
+void display(double arr[], double length)
+{
+    for(int i = 0;i < length; i++)
+    {
+        cout<< i << ", ";
+    }
 }
 
 //////////////////////////  Question 2   ////////////////////////////
@@ -90,6 +123,7 @@ void question2() {  // dynamic memory allocation
     //      the average of the EVEN values.  Output the returned average value.
     //      Use ARRAY Notation in your function.
     //      (Remember to use a function prototype if necessary)
+
 
 
 
@@ -128,6 +162,11 @@ void question3() {
 }
 /////////////////////// Question 4 /////////////////////////////////
 
+
+
+
+void question4() {
+    cout << "Question 4 - struct student" << endl;
 // Q4(a)  initialize_student( ... )
 
 
@@ -140,22 +179,37 @@ void question3() {
 //Q4(d)     fillArray( ... )
 
 
-void question4() {
-    cout << "Question 4 - struct student" << endl;
-
-
-
 }
-
-
+struct studentA
+{
+    string name;
+    string ID;
+    int age;
+};
+void display_student(studentA std);
+void increase_Age(int* age, int length)
+{
+    for (int i = 0; i < length; ++i)
+    {
+        *age = *age+1;
+    }
+}
 
 int main() {
     std::cout << "OOP Practical Examination - CA1 - March 2022" << std::endl;
     question1();
+
+//    display(array,size);
     question2();
     question3();
     question4();
 
+    studentA student1;
+    student1.name = "Kudzai Marumba";
+    student1.ID = "D00164651";
+    student1.age = 24;
+    display_student(student1);
+    increase_Age(x,0);
     return 0;
 }
 
