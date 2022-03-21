@@ -186,6 +186,15 @@ struct studentA
     string ID;
     int age;
 };
+
+void initialise(studentA)
+{
+    studentA student1;
+    student1.name = "Kudzai Marumba";
+    student1.ID = "D00164651";
+    student1.age = 24;
+
+}
 void display_student(studentA std);
 void increase_Age(int* age, int length)
 {
@@ -205,9 +214,6 @@ int main() {
     question4();
 
     studentA student1;
-    student1.name = "Kudzai Marumba";
-    student1.ID = "D00164651";
-    student1.age = 24;
     display_student(student1);
     increase_Age(x,0);
     return 0;
